@@ -1,0 +1,35 @@
+Project: BounTea
+Objectives: help developers searching for a package that they can contribute through the Tea DAO
+
+Data:
+  - LIST: https://formulae.brew.sh/api/formula.json
+  - DETAILS: github api? https://docs.github.com/en/rest/repos/repos#get-a-repository
+
+Features:
+* list packages
+  - deets:
+    - package name
+    - version
+    - bounteas // the theoretical number of rewards available
+  - fuzzy search filter? algolia or string similarity?
+* show details of package
+  - deets:
+    - name
+    - owner
+    - description
+    - stats
+    - contributors?
+    - issues?
+  - CTA: 
+    CONTRIBUTE to this package (donate or solve)
+    or 
+    REGISTER this package in Tea
+
+TODO;
+- deploy to vercel
+- add tailwind and daisyui
+- get list data: MIGHT BE TO HEAVY FOR DIRECT REQ ONLOAD
+  - prebuild data? to filter for packages with github repo.
+- design list page
+- design details page
+...
