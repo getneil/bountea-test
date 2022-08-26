@@ -26,7 +26,7 @@ Features:
     REGISTER this package in Tea
 
 TODO;
-- deploy to vercel
+  - deploy to vercel
 - add tailwind and daisyui
 - get list data: MIGHT BE TO HEAVY FOR DIRECT REQ ONLOAD
   - prebuild data? to filter for packages with github repo.
