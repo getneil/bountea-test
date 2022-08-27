@@ -3,7 +3,7 @@ import { useState } from 'react'
 import Head from 'next/head'
 import Image from 'next/image'
 import { PackageType } from '../types/index'
-import { getFormulas } from '../lib/db'
+import { getPackages } from '../lib/db'
 import Package from '../components/Package'
 import SearchInput from '../components/SearchInput'
 import usePackageSearch from '../hooks/packageSearch'
@@ -48,7 +48,7 @@ const Home: NextPage<HomeProps> = ({ packages }: HomeProps) => {
 }
 
 export function getStaticProps() {
-  const packages = getFormulas()
+  const packages = getPackages()
   return { props: { packages } }
 }
 

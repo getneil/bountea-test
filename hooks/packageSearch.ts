@@ -1,12 +1,10 @@
 import { useState, useEffect, useMemo } from 'react'
 import similarity from 'string-similarity'
 import { PackageType } from '../types/index'
+import { createPackageDictionary } from '../lib/db'
 
 const searchThreshold = process.env.NEXT_PUBLIC_SEARCH_THRESHOLD || 0.07
 
-interface PackageDictionary {
-  [key: string]: PackageType
-}
 export default function usePackageSearch(
   search: string,
   packages: PackageType[]
@@ -33,14 +31,4 @@ export default function usePackageSearch(
   return {
     result,
   }
-}
-
-function createPackageDictionary(packages: PackageType[]): {
-  [slug: string]: PackageType
-} {
-  const dictionary: PackageDictionary = {}
-  for (const p of packages) {
-    dictionary[p.slug] = p
-  }
-  return dictionary
 }
