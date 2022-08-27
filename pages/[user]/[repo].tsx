@@ -7,9 +7,7 @@ import { PackageType, RepoDetailsType } from '../../types/index'
 import { getPackageBySlug } from '../../lib/db'
 import { getRepoDetails } from '../../lib/github'
 import dayjs from 'dayjs'
-import { IconContext } from 'react-icons'
-import { FaGithub, FaEye, FaRegStar } from 'react-icons/fa'
-import { SiTarget } from 'react-icons/si'
+import GithubStats from '../../components/GithubStats'
 interface RepoPageProps {
   pkg?: PackageType
   repoDetails?: RepoDetailsType
@@ -56,46 +54,13 @@ const RepoPage: NextPage<RepoPageProps> = ({
               </section>
               <p className="mt-4 text-gray-500">{repoDetails.description}</p>
             </section>
-            <section className="flex justify-between mt-4 text-center text-4xl md:text-2xl md:w-1/4">
-              <a
-                target="_blank"
-                href={pkg?.github_repo_url}
-                rel="noopener noreferrer"
-              >
-                <div>
-                  <FaGithub />
-                </div>
-              </a>
-              <a
-                target="_blank"
-                href={pkg?.github_repo_url}
-                rel="noopener noreferrer"
-              >
-                <div>
-                  <FaEye />
-                  <p className="text-sm">{repoDetails.watch_count}</p>
-                </div>
-              </a>
-              <a
-                target="_blank"
-                href={pkg?.github_repo_url}
-                rel="noopener noreferrer"
-              >
-                <div>
-                  <FaRegStar />
-                  <p className="text-sm">{repoDetails.stargazers_count}</p>
-                </div>
-              </a>
-              <a
-                target="_blank"
-                href={pkg?.github_repo_url}
-                rel="noopener noreferrer"
-              >
-                <div>
-                  <SiTarget />
-                  <p className="text-sm">{repoDetails.open_issues_count}</p>
-                </div>
-              </a>
+            <section className="md:w-1/5">
+              <GithubStats
+                slug={pkg.slug}
+                watchers={repoDetails.watch_count}
+                stars={repoDetails.stargazers_count}
+                issues={repoDetails.open_issues_count}
+              />
             </section>
           </article>
         )}
