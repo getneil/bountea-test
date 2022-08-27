@@ -1,23 +1,18 @@
 import axios from 'axios'
-import { RepoDetailsType } from '../types'
+import { RepoDetailsType, RepoContributor } from '../types'
 import _ from 'lodash'
 const githubAccessToken = process.env.GITHUB_TOKEN
 
-export async function githubRequest(
-  slug: string,
-  prop?: string
-): Promise<any | null> {
+async function githubRequest(slug: string, prop?: string): Promise<any | null> {
   try {
     const url = ['https://api.github.com/repos', slug]
     if (prop) url.push(prop)
-
     const { data } = await axios.get(url.join('/'), {
       headers: {
         Accept: 'application/vnd.github+json',
         Authorization: `token ${githubAccessToken}`,
       },
     })
-
     if (!data) throw new Error(`github: ${slug} not found`)
 
     return data
@@ -46,4 +41,23 @@ export async function getRepoDetails(
     pushed_at: data.pushed_at,
   }
   return repoDetail
+}
+
+export async function getContributors(
+  slug: string
+): Promise<RepoContributor[]> {
+  const users = await githubRequest(slug, 'contributors')
+  let contributors: RepoContributor[] = []
+  if (Array.isArray(users)) {
+    for (const user of users) {
+      contributors.push({
+        id: user.id,
+        name: user.login,
+        avatar_url: user.avatar_url,
+        site_admin: user.site_admin,
+      } as RepoContributor)
+    }
+  }
+
+  return contributors
 }
