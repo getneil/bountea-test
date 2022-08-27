@@ -42,9 +42,9 @@ TODO;
   - Home Page: search component and realtime filter // dangerously heavy w/o going for algolia
   - Details Page: Basic Information List
   - loading status above header
+  - Details Page: Contributors List
+  - Details Page: Issues List
 
-- Details Page: Contributors List
-- Details Page: Issues List
 - Details Page: CTA List
 
 - Extras:

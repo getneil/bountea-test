@@ -1,4 +1,4 @@
-import { RepoDetailsType, RepoContributor } from '../../types'
+import { RepoDetailsType, RepoContributor, RepoIssue } from '../../types'
 
 export async function getRepoDetails(
   slug: string
@@ -41,4 +41,45 @@ export async function getContributors(
       site_admin: false,
     },
   ] as RepoContributor[]
+}
+
+export async function getIssues(slug: string): Promise<RepoIssue[]> {
+  return [
+    {
+      id: 1,
+      title: 'first issue',
+      body: '1 issue body',
+      created_at: new Date().toString(),
+      updated_at: new Date().toString(),
+      state: 'OPEN',
+      issue_number: 1,
+      author: 'c0mrade',
+      author_avatar_url: 'https://google.com',
+      bountea: 30,
+    },
+    {
+      id: 2,
+      title: 'Highest bounty issue',
+      body: '2 issue body',
+      created_at: new Date().toString(),
+      updated_at: new Date().toString(),
+      state: 'OPEN',
+      issue_number: 1,
+      author: 'Zaig0ne',
+      author_avatar_url: 'https://google.com',
+      bountea: 65,
+    },
+    {
+      id: 3,
+      title: 'third issue',
+      body: '3 issue body',
+      created_at: new Date().toString(),
+      updated_at: new Date().toString(),
+      state: 'OPEN',
+      issue_number: 1,
+      author: 'Exodoes',
+      author_avatar_url: 'https://google.com',
+      bountea: 10,
+    },
+  ]
 }

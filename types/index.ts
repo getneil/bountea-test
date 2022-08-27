@@ -30,3 +30,16 @@ export interface RepoContributor {
   avatar_url: string
   site_admin: boolean
 }
+
+export interface RepoIssue {
+  id: number
+  issue_number: number
+  title: string
+  body: string
+  created_at: string
+  updated_at: string
+  state: string
+  author: string
+  author_avatar_url: string
+  bountea: number
+}

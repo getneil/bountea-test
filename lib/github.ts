@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { RepoDetailsType, RepoContributor } from '../types'
+import { RepoDetailsType, RepoContributor, RepoIssue } from '../types'
 import _ from 'lodash'
 const githubAccessToken = process.env.GITHUB_TOKEN
 
@@ -47,17 +47,42 @@ export async function getContributors(
   slug: string
 ): Promise<RepoContributor[]> {
   const users = await githubRequest(slug, 'contributors')
-  let contributors: RepoContributor[] = []
-  if (Array.isArray(users)) {
-    for (const user of users) {
-      contributors.push({
-        id: user.id,
-        name: user.login,
-        avatar_url: user.avatar_url,
-        site_admin: user.site_admin,
-      } as RepoContributor)
-    }
-  }
+  const contributors: RepoContributor[] = !Array.isArray(users)
+    ? []
+    : users.map(
+        (user) =>
+          ({
+            id: user.id,
+            name: user.login,
+            avatar_url: user.avatar_url,
+            site_admin: user.site_admin,
+          } as RepoContributor)
+      )
 
   return contributors
+}
+
+export async function getIssues(slug: string): Promise<RepoIssue[]> {
+  const rawIssues = await githubRequest(slug, 'issues')
+  const issues: RepoIssue[] = !Array.isArray(rawIssues)
+    ? []
+    : rawIssues.map(
+        (issue) =>
+          ({
+            ..._.pick(issue, [
+              'id',
+              'title',
+              'body',
+              'created_at',
+              'updated_at',
+              'state',
+            ]),
+            issue_number: issue.number,
+            author: issue.user.login,
+            author_avatar_url: issue.user.avatar_url,
+            bountea: _.random(0, 67),
+          } as RepoIssue)
+      )
+
+  return issues
 }
