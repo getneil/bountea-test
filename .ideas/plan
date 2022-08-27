@@ -36,5 +36,6 @@ TODO;
 ...
 - Gh Actions:
   - prettier check / lint setup test
+    * detect .mjs, .ts and .tsx
   - build
   - jest?
