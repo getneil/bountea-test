@@ -1,5 +1,5 @@
 Project: BounTea
-Objectives: help developers searching for a package that they can contribute through the Tea DAO
+Objectives: help developers searching for a package that they can contribute by fixing problems or providing bountea money through the Tea DAO
 URL: https://bountea-test.vercel.app/
 
 Data:
@@ -46,8 +46,8 @@ TODO;
   - Details Page: Issues List
   - Details Page: CTA List
 
-- Extras:
-- replace logo it looks like food
+  - Extras:
+  - replace logo it looks like food
 - OG meta tag? in details page
 - Gh Actions: cypress e2e test? a bit overkill
 - animate on list filter use react-spring w/ tailwind

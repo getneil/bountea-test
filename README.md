@@ -7,6 +7,12 @@ First, install dependencies
 $ pnpm install
 ```
 
+To create your `Personal Access Token` follow this [link](https://github.com/settings/tokens)
+Create, a `.env.local` file with the following content:
+```
+GITHUB_TOKEN=PersonalAccessToken
+```
+
 Run the development server:
 
 ```bash
