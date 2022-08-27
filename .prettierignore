@@ -38,5 +38,5 @@ node_modules/*
 artifacts/*
 .env.local.prod
 .env.local
-.github-actions/*
+.github/*
 .ideas/*

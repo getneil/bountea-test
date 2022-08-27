@@ -8,8 +8,8 @@
     "build": "pnpm prebuild && next build",
     "start": "next start",
     "lint": "next lint",
-    "prettier:checks": "yarn prettier -c '**/*'",
-    "prettier:fix": "yarn prettier --write '**/*'"
+    "prettier:checks": "pnpm prettier -c '**/*'",
+    "prettier:fix": "pnpm prettier --write '**/*'"
   },
   "dependencies": {
     "axios": "^0.27.2",
