@@ -29,13 +29,19 @@ Features:
 TODO;
   - deploy to vercel
   - add tailwind and daisyui
-- get list data: MIGHT BE TO HEAVY FOR DIRECT REQ ONLOAD
-  - prebuild data? to filter for packages with github repo.
-- design list page
-- design details page
-...
-- Gh Actions:
-  - prettier check / lint setup test
-    * detect .mjs, .ts and .tsx
-  - build
-  - jest?
+  - get list data: MIGHT BE TO HEAVY FOR DIRECT REQ ONLOAD
+    - prebuild data? to filter for packages with github repo.
+  - design list page
+  - design details page
+  - layout component (header)
+- Gh Actions: prettier check / lint setup test
+  * detect .mjs, .ts and .tsx
+- Gh Actions: build
+- Gh Actions: jest test
+
+- Home Page
+  - list all data : ssr ? seems lite anyway
+
+- Extras:
+- OG meta tag? in details page
+- replace logo it looks like food
