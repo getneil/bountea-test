@@ -15,6 +15,7 @@ import dayjs from 'dayjs'
 import GithubStats from '../../components/GithubStats'
 import GithubContributor from '../../components/GithubContributor'
 import GithubIssues from '../../components/GithubIssue'
+import RepoCta from '../../components/RepoCta'
 interface RepoPageProps {
   pkg?: PackageType
   details?: RepoDetailsType
@@ -147,10 +148,18 @@ function IssuesPanel({
     })
     .slice(0, showAll ? issues.length : limit)
 
+  const totalBountea = issues.reduce((a, b) => a + b.bountea, 0)
+
   return (
     <section className="mt-16">
       <h3 className="text-lg my-4 font-semibold">Issues ( {issues.length} )</h3>
       <ul className="gap-2 flex flex-col">
+        <RepoCta
+          issueCount={issues.length}
+          bountea={totalBountea}
+          slug={slug}
+          activated={activated}
+        />
         {sortedSliced.map((issue) => (
           <GithubIssues
             key={issue.id}

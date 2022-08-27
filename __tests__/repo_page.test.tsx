@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react'
+import { render, screen, within } from '@testing-library/react'
 import '@testing-library/jest-dom'
 
 import RepoPage from '@/pages/[user]/[repo].tsx'
@@ -7,6 +7,7 @@ import { getRepoDetails, getContributors, getIssues } from '../lib/github'
 
 import { testId as ghContributorId } from '../components/GithubContributor'
 import { testId as ghIssueId } from '../components/GithubIssue'
+import { testId as ctaId } from '../components/RepoCta'
 jest.mock('../lib/db')
 jest.mock('../lib/github')
 
@@ -74,6 +75,45 @@ describe('Repo Details Page', () => {
 
     const highestBounteaIssue = screen.getByText('Highest bounty issue')
     expect(highestBounteaIssue).toBeInTheDocument()
+  })
+  it('shold show CTA: to claim the package', async () => {
+    const slug = 'leesavide/abcm2ps'
+    const pkg = getPackageBySlug(slug)
+    const [details, issues] = await Promise.all([
+      getRepoDetails(slug),
+      getIssues(slug),
+    ])
+    expect(issues).toHaveLength(3)
+
+    pkg.is_bountea_registered = false // force to claim
+    render(
+      <RepoPage pkg={pkg} details={details} contributors={[]} issues={issues} />
+    )
+    const ctaRendered = screen.getByTestId(ctaId)
+    expect(ctaRendered).toBeInTheDocument()
+
+    const { getByText } = within(ctaRendered)
+    expect(getByText('CLAIM')).toBeInTheDocument()
+  })
+  it('shoudl show CTA: to contribute to the package', async () => {
+    const slug = 'leesavide/abcm2ps'
+    const pkg = getPackageBySlug(slug)
+    const [details, issues] = await Promise.all([
+      getRepoDetails(slug),
+      getIssues(slug),
+    ])
+    expect(issues).toHaveLength(3)
+
+    pkg.is_bountea_registered = true // force to contribute
+    render(
+      <RepoPage pkg={pkg} details={details} contributors={[]} issues={issues} />
+    )
+    const ctaRendered = screen.getByTestId(ctaId)
+    expect(ctaRendered).toBeInTheDocument()
+
+    const { getByText } = within(ctaRendered)
+    expect(getByText('SOLVE ISSUES')).toBeInTheDocument()
+    expect(getByText('ADD BOUNTEAS')).toBeInTheDocument()
   })
   afterAll(() => {
     jest.unmock('../lib/db')

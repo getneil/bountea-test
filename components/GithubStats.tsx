@@ -22,7 +22,7 @@ export default function GithubStats({
   return (
     <section
       data-testid={testId}
-      className="flex md:flex-col md:gap-4 justify-between mt-4 text-center text-4xl md:text-2xl"
+      className="flex md:flex-col md:gap-4 justify-around mt-4 text-center text-4xl md:text-2xl"
     >
       <a
         title="Github Repo"

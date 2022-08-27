@@ -4,7 +4,7 @@ import Bountea from './Bountea'
 import Link from 'next/link'
 import dayjs from 'dayjs'
 
-interface GithubContributorProps {
+interface GithubIssueProps {
   issue: RepoIssue
   slug: string
   activated: boolean
@@ -16,7 +16,7 @@ export default function GithubIssue({
   issue,
   activated,
   slug,
-}: GithubContributorProps) {
+}: GithubIssueProps) {
   const issurUrl = `https://github.com/${slug}/issues/${issue.issue_number}`
   return (
     <a href={issurUrl} target="_blank" rel="noopener noreferrer">

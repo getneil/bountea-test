@@ -44,11 +44,10 @@ TODO;
   - loading status above header
   - Details Page: Contributors List
   - Details Page: Issues List
-
-- Details Page: CTA List
+  - Details Page: CTA List
 
 - Extras:
-- OG meta tag? in details page
 - replace logo it looks like food
+- OG meta tag? in details page
 - Gh Actions: cypress e2e test? a bit overkill
 - animate on list filter use react-spring w/ tailwind
