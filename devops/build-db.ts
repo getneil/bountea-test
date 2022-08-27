@@ -46,6 +46,7 @@ const getPackageShape = (formula: any): PackageType => {
       'homepage',
       'desc'
     ]),
+    version: _.get(formula, 'versions.stable', 'none'),
     slug,
     github_repo_url: gitHubRawUrl,
     github_repo_api_url: gitHubRawUrl.replace('.com/','.com/repos/'),

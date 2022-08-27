@@ -17,7 +17,7 @@ const Home: NextPage<HomeProps> = ({ packages }: HomeProps) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <section>
-        <ul>
+        <ul className="flex flex-col space-y-4 p-2 md:p-0">
           {packages.map((p) => (
             <Package key={p.slug} value={p} />
           ))}

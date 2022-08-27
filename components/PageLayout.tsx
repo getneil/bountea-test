@@ -15,6 +15,9 @@ export default function PageLayout({ children }: { children: any }) {
         </div>
       </header>
       {children}
+      <footer className="text-center h-32 py-8">
+        &copy; Copyright 2022 Tea Inc.
+      </footer>
     </main>
   )
 }

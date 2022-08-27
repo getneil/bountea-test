@@ -37,11 +37,14 @@ TODO;
   - Gh Actions: prettier check / lint setup test
     * detect .mjs, .ts and .tsx
   - Gh Actions: build
+  - Gh Actions: jest test
+  - Home Page: list all data : ssr ? seems lite anyway
 
-- Gh Actions: jest test
-
-- Home Page
-  - list all data : ssr ? seems lite anyway
+- Home Page: search component and realtime filter // dangerously heavy w/o going for algolia
+- Details Page: Basic Information List
+- Details Page: Contributors List
+- Details Page: Issues List
+- Details Page: CTA List
 
 - Extras:
 - OG meta tag? in details page

@@ -40,3 +40,4 @@ artifacts/*
 .env.local
 .github/*
 .ideas/*
+pnpm-lock.yaml
