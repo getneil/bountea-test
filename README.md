@@ -13,6 +13,11 @@ Create, a `.env.local` file with the following content:
 GITHUB_TOKEN=PersonalAccessToken
 ```
 
+Prebuild your local formula database
+```
+pnpm prebuild
+```
+
 Run the development server:
 
 ```bash
