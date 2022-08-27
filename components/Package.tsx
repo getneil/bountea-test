@@ -17,7 +17,7 @@ export default function Package({ value }: PackageProps) {
         data-testid={testId}
         className="cursor-pointer card card-side bg-base-100 shadow-xl hover:bg-gray-100 transition-colors"
       >
-        <figure>
+        <figure className="pl-4">
           <Bountea
             active={value.is_bountea_registered}
             amount={value.bountea}

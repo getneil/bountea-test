@@ -39,7 +39,7 @@ const RepoPage: NextPage<RepoPageProps> = ({
       <section className="p-4 md:p-0 min-h-screen">
         {details && pkg && (
           <>
-            <article className="mt-4 flex flex-col md:flex-row">
+            <article className="mt-4 flex flex-col md:flex-row  card bg-white p-8 shadow-lg">
               <section className="flex-grow">
                 <h1 className="text-3xl md:text-5xl text-green-700">
                   {details.name}
