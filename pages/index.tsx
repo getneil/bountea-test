@@ -8,7 +8,7 @@ import Package from '../components/Package'
 interface HomeProps {
   packages: PackageType[]
 }
-const Home: NextPage = ({ packages }: HomeProps) => {
+const Home: NextPage<HomeProps> = ({ packages }: HomeProps) => {
   return (
     <>
       <Head>
@@ -29,7 +29,6 @@ const Home: NextPage = ({ packages }: HomeProps) => {
 
 export function getStaticProps() {
   const packages = getFormulas()
-  console.log(packages.length, 'test')
   return { props: { packages } }
 }
 
