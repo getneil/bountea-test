@@ -1,5 +1,6 @@
 Project: BounTea
 Objectives: help developers searching for a package that they can contribute through the Tea DAO
+URL: https://bountea-test.vercel.app/
 
 Data:
   - LIST: https://formulae.brew.sh/api/formula.json
@@ -33,3 +34,7 @@ TODO;
 - design list page
 - design details page
 ...
+- Gh Actions:
+  - prettier check / lint setup test
+  - build
+  - jest?
