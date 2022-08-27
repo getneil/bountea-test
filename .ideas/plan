@@ -50,3 +50,4 @@ TODO;
 - OG meta tag? in details page
 - replace logo it looks like food
 - Gh Actions: cypress e2e test? a bit overkill
+- animate on list filter use react-spring w/ tailwind

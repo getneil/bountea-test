@@ -13,7 +13,10 @@ export const testId = 'package'
 export default function Package({ value }: PackageProps) {
   return (
     <Link href={`/${value.slug}`}>
-      <div data-testid={testId} className="cursor-pointer card card-side bg-base-100 shadow-xl hover:bg-slate-300">
+      <div
+        data-testid={testId}
+        className="cursor-pointer card card-side bg-base-100 shadow-xl hover:bg-gray-100 transition-colors"
+      >
         <figure>
           <Bountea
             active={value.is_bountea_registered}
