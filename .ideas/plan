@@ -28,7 +28,7 @@ Features:
 
 TODO;
   - deploy to vercel
-- add tailwind and daisyui
+  - add tailwind and daisyui
 - get list data: MIGHT BE TO HEAVY FOR DIRECT REQ ONLOAD
   - prebuild data? to filter for packages with github repo.
 - design list page
