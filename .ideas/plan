@@ -34,9 +34,10 @@ TODO;
   - design list page
   - design details page
   - layout component (header)
-- Gh Actions: prettier check / lint setup test
-  * detect .mjs, .ts and .tsx
-- Gh Actions: build
+  - Gh Actions: prettier check / lint setup test
+    * detect .mjs, .ts and .tsx
+  - Gh Actions: build
+
 - Gh Actions: jest test
 
 - Home Page
@@ -45,3 +46,4 @@ TODO;
 - Extras:
 - OG meta tag? in details page
 - replace logo it looks like food
+- Gh Actions: cypress e2e test? a bit overkill

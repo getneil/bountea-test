@@ -9,9 +9,12 @@
     "start": "next start",
     "lint": "next lint",
     "prettier:checks": "pnpm prettier -c '**/*'",
-    "prettier:fix": "pnpm prettier --write '**/*'"
+    "prettier:fix": "pnpm prettier --write '**/*'",
+    "test": "jest --watch",
+    "test:ci": "jest --ci"
   },
   "dependencies": {
+    "@testing-library/dom": "^8.17.1",
     "axios": "^0.27.2",
     "lodash": "^4.17.21",
     "next": "12.2.5",
@@ -20,6 +23,9 @@
     "react-dom": "18.2.0"
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "5.16.4",
+    "@testing-library/react": "13.2.0",
+    "@testing-library/user-event": "14.2.0",
     "@types/lodash": "^4.14.184",
     "@types/node": "^18.7.13",
     "@types/react": "18.0.17",
@@ -27,6 +33,8 @@
     "daisyui": "^2.24.0",
     "eslint": "8.23.0",
     "eslint-config-next": "12.2.5",
+    "jest": "28.1.0",
+    "jest-environment-jsdom": "28.1.0",
     "postcss": "^8.4.16",
     "tailwindcss": "^3.1.8",
     "ts-node": "^10.9.1",

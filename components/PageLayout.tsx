@@ -7,7 +7,7 @@ export default function PageLayout({ children }: { children: any }) {
       <header className="md:flex justify-between items-center">
         <figure className="cursor-pointer">
           <Link href="/">
-            <Image src="/logo.png" width={217} height={75} />
+            <Image src="/logo.png" width={217} height={75} alt="BounTea" />
           </Link>
         </figure>
         <div className="px-4 text-gray-600 text-center font-thin text-sm md:text-lg md:font-regular">

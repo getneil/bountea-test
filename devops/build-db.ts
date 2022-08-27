@@ -15,9 +15,11 @@ const formulaListUrl = 'https://formulae.brew.sh/api/formula.json'
 async function main() {
   const { data: formulas } = await axios.get(formulaListUrl)
   const formulasWithGithubUrls = formulas.filter(filterWithGithub)
-  const dbData: PackageType[] = formulasWithGithubUrls.map(getPackageShape)
-  await fs.writeFileSync('./lib/db.json', JSON.stringify(dbData, null, 2), 'utf8')
-  console.log('database has been created! packages:', dbData.length)
+  // limit to 300
+  const dbData: PackageType[] = formulasWithGithubUrls.slice(0,300).map(getPackageShape)
+  const uniqueDbData = _.uniqBy(dbData, 'slug') as PackageType[]
+  await fs.writeFileSync('./lib/db.json', JSON.stringify(uniqueDbData, null, 2), 'utf8')
+  console.log('database has been created! packages:', uniqueDbData.length)
 }
 
 const filterWithGithub = (formula: any): any => {
