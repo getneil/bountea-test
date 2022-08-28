@@ -14,7 +14,13 @@ const Home: NextPage<HomeProps> = ({ packages }: HomeProps) => {
   const [searchTerm, setSearchTerm] = useState<string>('')
 
   const { result } = usePackageSearch(searchTerm, packages)
-  const list = searchTerm ? result : packages
+  const list = searchTerm
+    ? result
+    : // this is to pre-render a smaller html when loading the home page to the client improve seo and UX loading
+    // NOTE: you will encounter hydration warning when running locally but it can be dismissed
+    typeof window === 'undefined'
+    ? packages.slice(0, 20)
+    : packages
   return (
     <>
       <Head>
