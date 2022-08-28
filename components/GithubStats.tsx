@@ -59,7 +59,7 @@ export default function GithubStats({
       <a
         title="Github Issues Count"
         target="_blank"
-        href={url}
+        href={`${url}/issues`}
         rel="noopener noreferrer"
       >
         <div className="flex flex-col items-center">
