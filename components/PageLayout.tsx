@@ -7,10 +7,12 @@ export default function PageLayout({ children }: { children: any }) {
     <main className="max-w-5xl mx-auto">
       <header className="flex justify-between items-center">
         <figure className="cursor-pointer">
-          <Link href="/">
-            <div className="ml-4 md:ml-0 w-48 text-3xl bg-green-600 hover:bg-green-700 shadow-md transition-colors text-white flex h-20 px-4 items-center align-middle rounded-b-md">
-              <FaLeaf /> <div>&nbsp;BounTea</div>
-            </div>
+          <Link href="/" passHref={true}>
+            <a>
+              <div className="ml-4 md:ml-0 w-48 text-3xl bg-green-600 hover:bg-green-700 shadow-md transition-colors text-white flex h-20 px-4 items-center align-middle rounded-b-md">
+                <FaLeaf /> <div>&nbsp;BounTea</div>
+              </div>
+            </a>
           </Link>
         </figure>
         <div className="px-4 text-gray-600 font-thin text-sm md:text-lg md:font-regular">
