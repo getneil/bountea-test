@@ -23,7 +23,7 @@ const Home: NextPage<HomeProps> = ({ packages }: HomeProps) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <section className="p-2 md:p-0 min-h-screen">
-        <div className="w-full py-4">
+        <div className="w-full py-4 mt-12 mb-2">
           <SearchInput
             onChange={(search: string) => {
               setSearchTerm(search)
